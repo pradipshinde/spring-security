@@ -1,11 +1,12 @@
 package com.pradip.web.entity;
 
-import java.util.Collection;
-
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-public class CustomUserDetails implements UserDetails {
+/**
+ * @author Pradip
+ *
+ */
+public class CustomUserDetails extends User implements UserDetails {
 
 	/**
 	 * 
@@ -19,22 +20,15 @@ public class CustomUserDetails implements UserDetails {
 
 	public CustomUserDetails(User user) {
 		this.user = user;
+	    this.setPassword(user.getPassword());
+	    this.setAuthorities(user.getAuthorities());
 	}
 
-	@Override
-	public Collection<? extends GrantedAuthority> getAuthorities() {
-		return user.getAuthorities();
-	}
-
-	@Override
-	public String getPassword() {
-		return user.getPassword();
-	}
-
+	
 	@Override
 	public String getUsername() {
 		return user.getUserName();
-	}
+	} 
 
 	@Override
 	public boolean isAccountNonExpired() {
