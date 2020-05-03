@@ -5,7 +5,8 @@
 <title>Home</title>
 </head>
 <body>
-<form action="/logout" method="POST">
+<form th:action="@{/logout}" method="POST">
+
 <h1>Welcome to home page </h1>
 <p th:text="|${user.username}|" style="color: blue;font-style: italic;"></p>
 <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
