@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org"
+  xmlns:sec="http://thyeleaf.org">
+<head th:insert="components.html :: headerFiles">
+<meta charset="ISO-8859-1">
+<title>User Profile</title>
+</head>
+<body>
+
+  <header th:insert="components.html :: nav"></header>
+
+  <div class="container">
+    <div class="jumbotron">
+
+    <h1 class="display-3" th:text="|Welcome : ${user.username}|"></h1>
+
+    <p class="lead">This is user profile page. only authenticated user can see
+      this page</p>
+    
+    <hr class="my-2">
+    <p>Profile Inforamtion</p>
+    <table class="table table-dark">
+      <tr>
+        <td>Username</td>
+        <td><span sec:authentication="name"></span></td>
+      </tr>
+      <tr>
+        <td>Autherities</td>
+        <td><span sec:authentication="principal.authorities"></span></td>
+      </tr>
+    </table>
+  </div>
+  </div>
+</body>
+</html>

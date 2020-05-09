@@ -5,6 +5,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
+
+
 /**
  * @author Pradip
  *
@@ -18,6 +20,12 @@ public class LoginContoller {
 	public String login() {
 		LOGGER.info("Login method called");
 		return "login";
+	}
+	
+	@GetMapping({"/","index"})
+	public String index(){
+		LOGGER.info("index method called");
+		return "index";
 	}
 
 }

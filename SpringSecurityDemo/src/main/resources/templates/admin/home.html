@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+<head th:insert="components.html :: headerFiles">
+  <meta charset="ISO-8859-1">
+  <title>Admin Home</title>
+</head>
+
+<body>
+  <header th:insert="components.html :: nav"></header>
+
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="display-3">Admin Home</h1>
+      <p class="lead">This is admin home page, only people ROLE_ADMIN can see this page</p>
+      <p class="lead" th:text="|Logged in user name -  ${user}|"></p>
+      <hr class="my-2">
+      <p>List of all user information</p>
+
+      <table class="table table-dark">
+        <tr>
+          <td>User Id</td>
+          <td>User Name</td>
+        </tr>
+        <tr th:each="user : ${users}">
+          <td th:text="${user.id}"></td>
+          <td th:text="${user.userName}"></td>
+        </tr>
+      </table>
+
+    </div>
+
+  </div>
+</body>
+
+</html>

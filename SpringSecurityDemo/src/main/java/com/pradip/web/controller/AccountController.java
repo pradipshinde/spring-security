@@ -1,6 +1,5 @@
 package com.pradip.web.controller;
 
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -15,18 +14,17 @@ import com.pradip.web.entity.User;
  * @author Pradip
  *
  */
-@Controller
-@RequestMapping(value="/user")
-public class UserController {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
-	
+@Controller
+@RequestMapping("account")
+public class AccountController {
+
+	private static final Logger LOGGER = LoggerFactory.getLogger(AccountController.class);
 
 	@GetMapping("/home")
 	public String getHome(@AuthenticationPrincipal final User user, final ModelMap modelMap) {
 		LOGGER.info("User inforamtion {}", user);
 		modelMap.put("user", user);
-		return "user/home";
+		return "common/home";
 	}
-
 }

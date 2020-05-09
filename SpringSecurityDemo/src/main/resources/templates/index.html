@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+<head th:insert="components.html :: headerFiles">
+    <meta charset="ISO-8859-1">
+    <title>Index Page</title>
+</head>
+
+<body>
+    <header th:insert="components.html :: nav"></header>
+    <!-- Page content add here -->
+    <div class="container">
+    <div class="jumbotron">
+        <h1 class="display-4">Spring Boot Security Demo example</h1>
+        <p class="lead">This is home page of our applicaton. Anyone can access it, even if the user is not logged in</p>
+        <hr class="my-4">
+        <p>Using this example, you will become more familiar with Spring Security concepts </p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="https://spring.io/projects/spring-security" role="button">Learn more about Spring Security</a>
+        </p>
+    </div>
+    </div>
+</body>
+
+</html>
